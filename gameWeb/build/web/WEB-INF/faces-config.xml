@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+
+    <application>
+        <message-bundle>resources.application</message-bundle>
+        <locale-config>
+            <default-locale>en</default-locale>
+        </locale-config>
+    </application>
+    <navigation-rule>
+        <description>login user</description>
+        <from-view-id>/login.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{loginManagedBean.login}</from-action>
+            <from-outcome>user</from-outcome>
+            <to-view-id>/userMain.xhtml</to-view-id>
+        </navigation-case>
+
+        <navigation-case>
+            <from-action>#{loginManagedBean.login}</from-action>
+            <from-outcome>invalid</from-outcome>
+            <to-view-id>/error.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-action>#{loginManagedBean.login}</from-action>
+            <from-outcome>Admin</from-outcome>
+            <to-view-id>/adminHome.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+   
+
+    <navigation-rule>
+        <description>register new user</description>
+        <from-view-id>/signup.xhtml</from-view-id>
+        
+        <navigation-case>
+            <from-action>#{crudBean.add}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{crudBean.add}</from-action>
+            <from-outcome>unsuccess</from-outcome>
+            <to-view-id>/unsuccess.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+</faces-config>

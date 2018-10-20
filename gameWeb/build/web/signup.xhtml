@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      >
+    <h:head>
+        <title>GameWeb Signup</title>
+        <h:outputStylesheet name="/css/style.css"/>        
+    </h:head>
+    <h:body>
+        <h:form>
+            <div name="login-form" class="login-form" action="" method="post">
+            <div class="header">
+                <center>
+                    <h1>GameWeb Registration</h1>
+                </center>
+                
+            </div>
+
+            <div class="content">
+                <h:inputText class="input fullname" value="#{crudBean.name}" a:placeholder="Full Name"/>
+                <h:inputText class="input username" value="#{crudBean.username}" a:placeholder="Username"/>
+                <h:inputSecret class="input password" value="#{crudBean.password}" a:placeholder="Password"/>
+                <h:inputText class="input phone" value="#{crudBean.phone}" a:placeholder="Phone number"/>
+                <h:inputText class="input address" value="#{crudBean.address}" a:placeholder="Address"/>
+                <h:inputText class="input email" value="#{crudBean.email}" a:placeholder="Email"/>    
+            </div>
+
+            
+            <div class="footer">    
+                <center>
+                <h:commandButton class="button" value="Register" action="#{crudBean.add}" />
+                <h:outputLink class="button" value="login.xhtml">Cancel</h:outputLink>
+                </center>
+            </div>
+            </div>
+            
+            
+        </h:form>
+    </h:body>
+</html>
+
