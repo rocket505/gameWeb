@@ -6,7 +6,7 @@
 package com.gameweb;
 
 
-import javax.enterprise.context.SessionScoped;
+
 import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,6 +16,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Map;
 import javax.faces.bean.ManagedBean;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
 
 /**
@@ -35,7 +36,8 @@ public class adminCrud implements Serializable {
     private String publisher;
     private String search;
     private DbConnection Db_connect;
-    private Map<String,Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+    private Map<String,Object> sessionMapp = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+
     
     public adminCrud() {
     }
@@ -166,17 +168,19 @@ public class adminCrud implements Serializable {
             }
         } catch (Exception e) {
             System.out.println(e);
-        }finally{
+        }/*finally{
             if(connection!=null){
                 connection.close();
             }
-        }
+        }*/
         return list_of_game;
     }
     // Used to fetch record to update
-    public String edit_Game(int gameid){
+    
+   
+    public String editGameDetails(int gameid) {
         
-		adminCrud obj_AdminCrud = null;
+        adminCrud obj_AdminCrud = null;
         System.out.println(gameid);
 		
         try{
@@ -193,15 +197,17 @@ public class adminCrud implements Serializable {
             obj_AdminCrud.setType(rs.getString("type"));
             obj_AdminCrud.setDeveloper(rs.getString("developer"));
             obj_AdminCrud.setPublisher(rs.getString("publisher"));
-            sessionMap.put("editGame", obj_AdminCrud);
+            sessionMapp.put("gameDetail", obj_AdminCrud);
+           
             
         }catch(Exception e){
             System.out.println(e);
         }       
-        return "/editGame.xhtml?faces-redirect=true";
+        return "/editGame.xhtml";
     }
     //update game
     public String update_Game(int gameid){
+        System.out.println(gameid);
         try {
             Db_connect = new DbConnection();
             Connection connection = Db_connect.get_connection();
@@ -224,7 +230,8 @@ public class adminCrud implements Serializable {
     }
       
     //delete game
-    public String delete_Game(int gameid){     
+    public String delete_Game(int gameid){    
+        System.out.println(gameid);
         try {
             Db_connect = new DbConnection();
             Connection connection = Db_connect.get_connection();

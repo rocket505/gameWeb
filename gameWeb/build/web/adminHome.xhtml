@@ -82,8 +82,10 @@
             <br/>
             <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <h:outputLink value="adminHome.xhtml"><h:outputLabel value="#{userDetail.username}" /></h:outputLink>
                 <h:outputLink value="adminHome.xhtml"><h:outputLabel value="Home" /></h:outputLink>
                 <h:outputLink value="addGame.xhtml"><h:outputLabel value="Add Game" /></h:outputLink>
+                <h:outputLink value="adminHomeUpdate.xhtml"><h:outputLabel value="Update Game" /></h:outputLink>
                 <h:outputLink value="adminHomeDelete.xhtml"><h:outputLabel value="Delete Game" /></h:outputLink>
                 <h:commandLink action="#{loginManagedBean.logout}"><h:outputLabel value="Logout" /></h:commandLink>
             </div>          
@@ -104,6 +106,7 @@
                 <h:column>
                     <f:facet name="header">No</f:facet>
                     <h:outputText value="#{table.rowIndex + 1}"/>
+                    <h:inputHidden value="#{u.id}"></h:inputHidden>
                 </h:column>
                 <h:column>
                     <f:facet name="header">Name</f:facet>
@@ -128,12 +131,7 @@
                 <h:column>
                     <f:facet name="header">Publisher</f:facet>
                     <h:outputText value="#{u.publisher}"/>
-                </h:column>
-                <h:column> 
-                    <f:facet name="header">Update</f:facet>
-                    <h:commandButton action = "#{adminCrud.edit_Game(u.id)}" value="Update" class="btn btn-primary"> 
-                    </h:commandButton>
-                </h:column>     
+                </h:column>    
             </h:dataTable>
             
         </h:form>  
