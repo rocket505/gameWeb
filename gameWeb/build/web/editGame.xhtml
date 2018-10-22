@@ -5,126 +5,44 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>    
         <title>Edit Your Record</title>
-        <h:outputStylesheet name="/css/bootstrap.min.css"/>
-        <style type="text/css">
-            
-           body {
-                font-family: "Lato", sans-serif;
-            }
-
-            .sidenav {
-                height: 100%;
-                width: 0;
-                position: fixed;
-                z-index: 1;
-                top: 0;
-                left: 0;
-                background-color: #111;
-                overflow-x: hidden;
-                transition: 0.5s;
-                padding-top: 60px;
-            }
-
-            .sidenav a {
-                padding: 8px 8px 8px 32px;
-                text-decoration: none;
-                font-size: 25px;
-                color: #818181;
-                display: block;
-                transition: 0.3s;
-            }
-
-            .sidenav a:hover {
-                color: #f1f1f1;
-            }
-
-            .sidenav .closebtn {
-                position: absolute;
-                top: 0;
-                right: 25px;
-                font-size: 36px;
-                margin-left: 50px;
-            }
-
-            @media screen and (max-height: 450px) {
-                .sidenav {padding-top: 15px;}
-                .sidenav a {font-size: 18px;}
-            }
-        </style>
+        <h:outputStylesheet name="/css/style.css"/>
+        <h:outputStylesheet name="/css/yusuf.css"/>
     </h:head>
-    <h:body style="background-color:dimgray">
-        <h:form id="form" class="form-horizontal">
-            <div class="form-group">
-                <div class="col-sm-4"></div>
+    
+    <h:body>
+        <h:form>
+            
+              
                 <h2 style="text-align: center" class="col-sm-4">Edit Game Details</h2>
-            </div>
-            <hr/>
-            <div id="mySidenav" class="sidenav">
+           
+            
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 <h:outputLink value="adminHome.xhtml"><h:outputLabel value="Home" /></h:outputLink>
                 <h:outputLink value="addGame.xhtml"><h:outputLabel value="Add Game" /></h:outputLink>
                 <h:outputLink value="adminHomeDelete.xhtml"><h:outputLabel value="Delete Game" /></h:outputLink>
                 <h:commandLink action="#{loginManagedBean.logout}"><h:outputLabel value="Logout" /></h:commandLink>
                 
-            </div>          
+                     
             <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; more</span>
 
-            <script>
-            function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-            }
-
-            function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            }
-            </script>
-            <div class="form-group">
-                <h:inputHidden value="#{editGame.id}"></h:inputHidden>
+                       
+               
+                             
+                             <div class="content">
+                <h:inputHidden value="#{editGame.id}"/>
+                <h:outputLabel value="Fullname" /><h:inputText class="input fullname" value="#{editGame.name}" />
+                <h:outputLabel value="Username" /><h:inputText class="input username" value="#{editGame.username}" />
+                <h:outputLabel value="Password" /><h:inputText class="input password" value="#{editGame.password}" />
+                <h:outputLabel value="Phone" /><h:inputText class="input phone" value="#{editGame.phone}" />
+                <h:outputLabel value="Email" /><h:inputText class="input address" value="#{editGame.address}" />
+                <h:outputLabel value="Address" /><h:inputText class="input email" value="#{editGame.email}" />
+            </div>
+           
                 
-                <h:outputLabel class="control-label col-sm-2">Game Name</h:outputLabel>
-                <div class="col-sm-4">
-                    <h:inputText value="#{editGame.name}" class="form-control"/>
-                </div>
-            </div>
-            
-            <div class="form-group">
-                <h:outputLabel  class="control-label col-sm-2">Description</h:outputLabel>
-                <div class="col-sm-4">
-                    <h:inputTextarea value="#{editGame.description}" cols="50" rows="5" class="form-control"/>
-                </div>
-            </div>
-            
-            <div class="form-group">
-                <h:outputLabel class="control-label col-sm-2">Price</h:outputLabel>
-                <div class="col-sm-4">
-                    <h:inputText value="#{editGame.price}" class="form-control"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <h:outputLabel class="control-label col-sm-2">Type</h:outputLabel>
-                <div class="col-sm-4">
-                    <h:inputText value="#{editGame.type}" class="form-control"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <h:outputLabel class="control-label col-sm-2">Developer</h:outputLabel>
-                <div class="col-sm-4">
-                    <h:inputText value="#{editGame.developer}" class="form-control"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <h:outputLabel class="control-label col-sm-2">Publisher</h:outputLabel>
-                <div class="col-sm-4">
-                    <h:inputText value="#{editGame.publisher}" class="form-control"/>
-                </div>
-            </div>
-                
-            <div class="form-group">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-4">
-                    <center><h:commandButton value="Update" action="#{editGame.update_Game(editGame.id)}" class="btn btn-primary" style="width: 80px;"></h:commandButton></center>
-                </div>
-            </div>
+                     
+                             <center><h:commandButton value="Update" action="#{editGame.update_Game(editGame.id)}" class="btn btn-primary" style="width: 80px;"></h:commandButton></center>
+               
+           
         </h:form>
     </h:body>
 </html>
