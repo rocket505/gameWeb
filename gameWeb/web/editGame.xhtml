@@ -78,51 +78,52 @@
             document.getElementById("mySidenav").style.width = "0";
             }
             </script>
+            
             <div class="form-group">
-                <h:inputHidden value="#{editGame.id}"></h:inputHidden>
                 
+                <h:inputHidden value="#{gameDetail.id}"></h:inputHidden>
                 <h:outputLabel class="control-label col-sm-2">Game Name</h:outputLabel>
                 <div class="col-sm-4">
-                    <h:inputText value="#{editGame.name}" class="form-control"/>
+                    <h:inputText value="#{gameDetail.name}" class="form-control"/>
                 </div>
             </div>
             
             <div class="form-group">
                 <h:outputLabel  class="control-label col-sm-2">Description</h:outputLabel>
                 <div class="col-sm-4">
-                    <h:inputTextarea value="#{editGame.description}" cols="50" rows="5" class="form-control"/>
+                    <h:inputTextarea value="#{gameDetail.description}" cols="50" rows="5" class="form-control"/>
                 </div>
             </div>
             
             <div class="form-group">
                 <h:outputLabel class="control-label col-sm-2">Price</h:outputLabel>
                 <div class="col-sm-4">
-                    <h:inputText value="#{editGame.price}" class="form-control"/>
+                    <h:inputText value="#{gameDetail.price}" class="form-control"/>
                 </div>
             </div>
             <div class="form-group">
                 <h:outputLabel class="control-label col-sm-2">Type</h:outputLabel>
                 <div class="col-sm-4">
-                    <h:inputText value="#{editGame.type}" class="form-control"/>
+                    <h:inputText value="#{gameDetail.type}" class="form-control"/>
                 </div>
             </div>
             <div class="form-group">
                 <h:outputLabel class="control-label col-sm-2">Developer</h:outputLabel>
                 <div class="col-sm-4">
-                    <h:inputText value="#{editGame.developer}" class="form-control"/>
+                    <h:inputText value="#{gameDetail.developer}" class="form-control"/>
                 </div>
             </div>
             <div class="form-group">
                 <h:outputLabel class="control-label col-sm-2">Publisher</h:outputLabel>
                 <div class="col-sm-4">
-                    <h:inputText value="#{editGame.publisher}" class="form-control"/>
+                    <h:inputText value="#{gameDetail.publisher}" class="form-control"/>
                 </div>
             </div>
                 
             <div class="form-group">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-4">
-                    <center><h:commandButton value="Update" action="#{editGame.update_Game(editGame.id)}" class="btn btn-primary" style="width: 80px;"></h:commandButton></center>
+                    <center><h:commandButton value="Update" action="#{gameDetail.update_Game(gameDetail.id)}" class="btn btn-primary" style="width: 80px;"></h:commandButton></center>
                 </div>
             </div>
         </h:form>
