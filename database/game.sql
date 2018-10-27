@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.8.3
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 08, 2018 at 07:01 AM
--- Server version: 10.1.19-MariaDB
--- PHP Version: 5.6.28
+-- Generation Time: Oct 27, 2018 at 03:04 PM
+-- Server version: 10.1.36-MariaDB
+-- PHP Version: 7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -59,18 +61,20 @@ CREATE TABLE `list` (
   `price` double NOT NULL,
   `type` varchar(100) NOT NULL,
   `developer` varchar(100) NOT NULL,
-  `publisher` varchar(100) NOT NULL
+  `publisher` varchar(100) NOT NULL,
+  `quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `list`
 --
 
-INSERT INTO `list` (`id`, `name`, `description`, `price`, `type`, `developer`, `publisher`) VALUES
-(1, 'Batman Origin', 'Batman™: Arkham Origins is the next installment in the blockbuster Batman: Arkham videogame franchise. Developed by WB Games Montréal, the game features an expanded Gotham City and introduces an original prequel storyline set several years before the events of Batman: Arkham Asylum and Batman: Arkham City, the first two critically acclaimed games of the franchise. Taking place before the rise of Gotham City’s most dangerous criminals, the game showcases a young and unrefined Batman as he faces a defining moment in his early career as a crime fighter that sets his path to becoming the Dark Knight.', 215, 'Fighting', 'FdausGame', 'Ubisoft'),
-(2, 'PUBG', 'PLAYERUNKNOWN''S BATTLEGROUNDS is a battle royale shooter that pits 100 players against each other in a struggle for survival. Gather supplies and outwit your opponents to become the last person standing.', 75, 'Battle Royale', 'Ajump Co.', 'TenCent2'),
-(3, 'dota 2', 'Every day, millions of players worldwide enter battle as one of over a hundred Dota heroes. And no matter if it''s their 10th hour of play or 1,000th, there''s always something new to discover. With regular updates that ensure a constant evolution of gameplay, features, and heroes, Dota 2 has truly taken on a life of its own.', 0, 'MOBA', 'Khai Khai', 'Blizzard'),
-(6, 'paladin', 'paladin', 0, 'FPS', 'AzamJah', 'JIbber');
+INSERT INTO `list` (`id`, `name`, `description`, `price`, `type`, `developer`, `publisher`, `quantity`) VALUES
+(1, 'Batman Origin', 'Batman™: Arkham Origins is the next installment in the blockbuster Batman: Arkham videogame franchise. Developed by WB Games Montréal, the game features an expanded Gotham City and introduces an original prequel storyline set several years before the events of Batman: Arkham Asylum and Batman: Arkham City, the first two critically acclaimed games of the franchise. Taking place before the rise of Gotham City’s most dangerous criminals, the game showcases a young and unrefined Batman as he faces a defining moment in his early career as a crime fighter that sets his path to becoming the Dark Knight.', 215, 'Fighting', 'FdausGame', 'Ubisoft', 100),
+(2, 'PUBG', 'PLAYERUNKNOWN\'S BATTLEGROUNDS is a battle royale shooter that pits 100 players against each other in a struggle for survival. Gather supplies and outwit your opponents to become the last person standing.', 75, 'Battle Royale', 'Ajump Co.', 'TenCent2', 0),
+(3, 'dota 2', 'Every day, millions of players worldwide enter battle as one of over a hundred Dota heroes. And no matter if it\'s their 10th hour of play or 1,000th, there\'s always something new to discover. With regular updates that ensure a constant evolution of gameplay, features, and heroes, Dota 2 has truly taken on a life of its own.', 0, 'MOBA', 'Khai Khai', 'Blizzard', 0),
+(6, 'paladin', 'paladin', 0, 'FPS', 'AzamJah', 'JIbber', 0),
+(7, 'sd', 'sds', 10, 'sdsd', 'sdd', 'dsds', 0);
 
 -- --------------------------------------------------------
 
@@ -155,21 +159,26 @@ ALTER TABLE `wishlist`
 --
 ALTER TABLE `cust_details`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+
 --
 -- AUTO_INCREMENT for table `list`
 --
 ALTER TABLE `list`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
 -- AUTO_INCREMENT for table `purchase_history`
 --
 ALTER TABLE `purchase_history`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT for table `wishlist`
 --
 ALTER TABLE `wishlist`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

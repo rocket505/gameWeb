@@ -40,7 +40,7 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>faces/frontWeb.xhtml</welcome-file>
+        <welcome-file>faces/homepage.html</welcome-file>
     </welcome-file-list>
 
 </web-app>

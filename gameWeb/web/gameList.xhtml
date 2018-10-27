@@ -5,38 +5,24 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"> 
     <h:head>
-        <h:outputStylesheet name="/css/yusuf.css"/>
-        <header>
-      <h1 id="logo"><a href="">Game Web</a></h1>
-      <nav>
-        <ul>
-          <li><h:outputLink value="userMain.xhtml"><h:outputLabel value="Home" /></h:outputLink></li>
-          <li><h:outputLink value="gameList.xhtml"><h:outputLabel value="Game List" /></h:outputLink></li>
-          <li><h:outputLink value="purchase_history.xhtml"><h:outputLabel value="Purchase History" /></h:outputLink></li>
-          <li><h:outputLink value="about.xhtml"><h:outputLabel value="About" /></h:outputLink></li>
-          <li><h:outputLink value="profile.xhtml"><h:outputLabel value="#{userDetail.name}" /></h:outputLink></li>
-        </ul>
-      </nav>
-      <nav class="responsive">
-        <span class="open">Navigation</span>
-        <ul>
-          <li><h:outputLink value="userMain.xhtml"><h:outputLabel value="Home" /></h:outputLink></li>
-          <li><h:outputLink value="gameList.xhtml"><h:outputLabel value="Game List" /></h:outputLink></li>
-          <li><h:outputLink value="purchase_history.xhtml"><h:outputLabel value="Purchase History" /></h:outputLink></li>
-          <li><h:outputLink value="about.xhtml"><h:outputLabel value="About" /></h:outputLink></li>
-          <li><h:outputLink value="profile.xhtml"><h:outputLabel value="#{userDetail.name}" /></h:outputLink></li>
-        </ul>
-      </nav>
-      <form action="" class="search">
-        <input type="submit" value="" />
-        <input type="search" placeholder="Search..." />
-       </form>
-    </header>
-        <title>GameWeb</title>  
+        <h:outputStylesheet name="/css/style.css"/> 
     </h:head>
 
-    <h:body style="background-color:dimgray;">
-
+    <h:body>
+        <header>
+            <div class="wrapper">
+                    <h1>Game Web<span class="color">.</span></h1>
+                    <nav>
+                    <ul>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="gameList.xhtml">Browse</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="login.xhtml">Login</a></li>
+                    </ul>
+                    </nav>
+                </div>
+       </header>
+        
         <h:form>
                   
           
