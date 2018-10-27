@@ -150,7 +150,11 @@ public class adminCrud implements Serializable {
             Statement st=connection.createStatement();
             
             if(search != null)
-                sql = "SELECT * FROM list WHERE name = '"+ search + "'";
+                sql = "SELECT * FROM list WHERE name LIKE '%"+ search +"%' "
+                        + "OR description LIKE '%"+ search +"%' "
+                        + "OR type LIKE '%"+ search +"%'"
+                        + "OR developer LIKE '%"+ search +"%' "
+                        + "OR publisher LIKE '%"+ search +"%'";
             else
                 sql = "SELECT * FROM list";
             
