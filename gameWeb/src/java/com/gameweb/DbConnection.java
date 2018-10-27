@@ -26,7 +26,7 @@ public class DbConnection {
         try {
             String DATABASE = "jdbc:mysql://localhost:3306/game";
             String USERNAME = "root";
-            String PASSWORD = "1300882525";
+            String PASSWORD = "";
             String DRIVER = "com.mysql.jdbc.Driver";
             Class.forName(DRIVER);
             connection=DriverManager.getConnection(DATABASE,USERNAME,PASSWORD);

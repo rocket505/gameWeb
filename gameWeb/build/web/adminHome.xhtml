@@ -6,6 +6,7 @@
     <h:head>  
         <title>Admin main page</title>  
         <h:outputStylesheet name="/css/bootstrap.min.css"/>  
+        <h:outputStylesheet name="/css/style.css"/>
         <style type="text/css">  
             table {  
                 border-collapse: collapse;  
@@ -69,27 +70,33 @@
             
         </style>  
     </h:head>  
-    <h:body style="background-color:dimgray">  
+    <h:body>  
+
+            <header>
+                    <div class="wrapper">
+                            <h1>Game Web<span class="color">.</span></h1>
+                            <nav>
+                            <ul>
+                            <li><a href="homepage.html">Home</a></li>
+                            <li><a href="gameList.xhtml">Browse</a></li>
+                            <li><h:outputLink value="addGame.xhtml"><h:outputLabel value="Add Game" /></h:outputLink></li>
+                            <li><h:outputLink value="adminHomeUpdate.xhtml"><h:outputLabel value="Update Game" /></h:outputLink></li>
+                            <li><h:outputLink value="adminHomeDelete.xhtml"><h:outputLabel value="Delete Game" /></h:outputLink></li>
+                            <li><a href="homepage.html">Log out</a></li>
+                            </ul>
+                            </nav>
+                        </div>
+               </header>
         <h:form>  
-            <center>  
-                <h1><h:outputText style="color: whitesmoke; font-family: verdana" value="Admin GameWeb"/></h1>  
-            </center>
             
                 <div style="float: right; width:25%;">
                     <h:inputText id="text" value="#{adminCrud.search}"/>
                     <h:commandButton value="Search" action="/adminHome.xhtml" class="btn btn-primary"/>
                 </div>
             <br/>
-            <div id="mySidenav" class="sidenav">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <h:outputLink value="adminHome.xhtml"><h:outputLabel value="#{userDetail.username}" /></h:outputLink>
-                <h:outputLink value="adminHome.xhtml"><h:outputLabel value="Home" /></h:outputLink>
-                <h:outputLink value="addGame.xhtml"><h:outputLabel value="Add Game" /></h:outputLink>
-                <h:outputLink value="adminHomeUpdate.xhtml"><h:outputLabel value="Update Game" /></h:outputLink>
-                <h:outputLink value="adminHomeDelete.xhtml"><h:outputLabel value="Delete Game" /></h:outputLink>
-                <h:commandLink action="#{loginManagedBean.logout}"><h:outputLabel value="Logout" /></h:commandLink>
-            </div>          
-            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; more</span>
+                <!--<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>-->
+                         
+            <!--<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; more</span>-->
 
             <script>
             function openNav() {

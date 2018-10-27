@@ -13,10 +13,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/User/Documents/GitHub/gameWeb/gameWeb/web/login.xhtml</file>
-            <file>file:/C:/Users/User/Documents/GitHub/gameWeb/gameWeb/src/java/com/gameweb/loginManagedBean.java</file>
-            <file>file:/C:/Users/User/Documents/GitHub/gameWeb/gameWeb/web/index.xhtml</file>
+            <file>file:/C:/Users/User/Documents/GitHub/gameWeb/gameWeb/web/WEB-INF/faces-config.xml</file>
             <file>file:/C:/Users/User/Documents/GitHub/gameWeb/gameWeb/web/userMain.xhtml</file>
-            <file>file:/C:/Users/User/Documents/GitHub/gameWeb/gameWeb/web/home.xhtml</file>
+            <file>file:/C:/Users/User/Documents/GitHub/gameWeb/gameWeb/web/gameList.xhtml</file>
+            <file>file:/C:/Users/User/Documents/GitHub/gameWeb/gameWeb/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/User/Documents/GitHub/gameWeb/gameWeb/web/frontWeb.xhtml</file>
         </group>
     </open-files>
 </project-private>
