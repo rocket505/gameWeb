@@ -1,0 +1,137 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Simply</title>
+        <!--[if lt IE 9]>
+        <script
+       src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <link rel="stylesheet" type="text/css" href="resources/css/reset.css">
+        <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+        <link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
+       </head>
+
+       <body>
+
+        <!--header-->
+       <header>
+            <div class="wrapper">
+                    <h1><a href="homepage.html">Game Web</a><span class="color">.</span></h1>
+                    <nav>
+                    <ul>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="login.xhtml">Login</a></li>
+                    </ul>
+                    </nav>
+                </div>
+       </header>
+
+       <div style="background-color:#434547">
+       <!--slideshow-->
+       <div class="slideshow-container">
+
+            <div class="mySlides fade">
+              <img src="resources/images/spiderman.jpg" style="width:100%;">
+            </div>
+            
+            <div class="mySlides fade">
+              <img src="resources/images/wow1.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides fade">
+              <img src="resources/images/rdd2.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="resources/images/pubg.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="resources/images/mhunterw.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="images/csgo.jpg" style="width:100%">
+            </div>
+            
+            </div>
+            </div>
+            <br>
+            
+            <div style="text-align:center">
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+              <span class="dot"></span>
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+              <span class="dot"></span>
+            </div>
+
+
+            <!--buy now-->
+            <div id="wrap">
+                <div id="columns" class="columns_4">
+
+              <figure>
+              <img src="images/csgo.jpg">
+                <figcaption>Green Checkered Shirt</figcaption>
+                <span class="price">$44</span>
+                <a class="button" href="login.xhtml">Buy Now</a>
+                </figure>
+
+
+                <figure>
+                    <img src="images/csgo.jpg">
+                    <figcaption>Green Checkered Shirt</figcaption>
+                    <span class="price">$44</span>
+                    <a class="button" href="login.xhtml">Buy Now</a>
+                </figure>
+
+                <figure>
+                    <img src="images/csgo.jpg">
+                    <figcaption>Green Checkered Shirt</figcaption>
+                    <span class="price">$44</span>
+                    <a class="button" href="login.xhtml">Buy Now</a>
+                </figure>
+
+                <figure>
+                    <img src="images/csgo.jpg">
+                    <figcaption>Green Checkered Shirt</figcaption>
+                    <span class="price">$44</span>
+                    <a class="button" href="login.xhtml">Buy Now</a>
+                </figure>
+
+            </div>
+
+            
+
+            </div>
+
+
+
+       <!--js script for slideshow-->
+       <script>
+            var slideIndex = 0;
+            showSlides();
+            
+            function showSlides() {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                for (i = 0; i < slides.length; i++) {
+                   slides[i].style.display = "none";  
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) {slideIndex = 1}    
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex-1].style.display = "block";  
+                dots[slideIndex-1].className += " active";
+                setTimeout(showSlides, 3000); // Change image every 2 seconds
+            }
+            </script>
+       
+       </body>
+</html>

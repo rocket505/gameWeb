@@ -4,22 +4,219 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"> 
     <h:head>
-        <h:outputStylesheet name="/css/fonticons.css"/>
-        <h:outputStylesheet name="/fonts/stylesheet.css"/>
-        <h:outputStylesheet name="/css/font-awesome.min.css"/>
-        <h:outputStylesheet name="/css/jquery.fancybox.css"/>
-        <h:outputStylesheet name="/css/bootstrap.min.css"/>
-        <h:outputStylesheet name="/css/magnific-popup.css"/>
-        <h:outputStylesheet name="/css/plugins.css"/>
-        <h:outputStylesheet name="/css/style.css"/>
-        <h:outputStylesheet name="/css/responsive.css"/>
-        <h:outputScript name="resources/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js" />
-
+        <h:outputStylesheet name="/css/yusuf.css"/>
+        <header>
+      <h1 id="logo"><a href="">Game Web</a></h1>
+      <nav>
+        <ul>
+          <li><h:outputLink value="userMain.xhtml"><h:outputLabel value="Home" /></h:outputLink></li>
+          <li><h:outputLink value="gameList.xhtml"><h:outputLabel value="Game List" /></h:outputLink></li>
+          <li><h:outputLink value="purchase_history.xhtml"><h:outputLabel value="Purchase History" /></h:outputLink></li>
+          <li><h:outputLink value="about.xhtml"><h:outputLabel value="About" /></h:outputLink></li>
+          <li><h:outputLink value="login.xhtml"><h:outputLabel value="Login" /></h:outputLink></li>
+        </ul>
+      </nav>
+      <nav class="responsive">
+        <span class="open">Navigation</span>
+        <ul>
+          <li><h:outputLink value="userMain.xhtml"><h:outputLabel value="Home" /></h:outputLink></li>
+          <li><h:outputLink value="gameList.xhtml"><h:outputLabel value="Game List" /></h:outputLink></li>
+          <li><h:outputLink value="purchase_history.xhtml"><h:outputLabel value="Purchase History" /></h:outputLink></li>
+          <li><h:outputLink value="about.xhtml"><h:outputLabel value="About" /></h:outputLink></li>
+          <li><h:outputLink value="login.xhtml"><h:outputLabel value="Login" /></h:outputLink></li>
+        </ul>
+      </nav>
+      <form action="" class="search">
+        <input type="submit" value="" />
+        <input type="search" placeholder="Search..." />
+       </form>
+    </header>
+        <title>GameWeb</title>  
     </h:head>  
     
-    <h:body data-spy="scroll" data-target=".navbar-collapse">
+    <h:body style="background-color:dimgray;">
 
-            
+        <h:form>
+
+
+            <br/>
+         
+          
+
+            <div style="float: right; width:80%;">
+                
+                
+                <br/>
+                
+                <div id="content" class="center_content">
+                    <h2><h:outputText style="color: whitesmoke; font-family: verdana" value="Popular Games"/></h2>
+                </div>
+
+                <div><h:graphicImage value="dimages/ota2.jpg" width="150" height="150" />
+                    <div style="float: right; width:84%;">
+                        <table border="1" width="800" height="150">
+                            <tr bgcolor="F1F1F1">
+                                <td>
+                                    DOTA 2 -
+                                    Every day, millions of players worldwide enter battle as one of over a hundred Dota heroes. 
+                                    And no matter if it's their 10th hour of play or 1,000th, there's always something new to discover. 
+                                    With regular updates that ensure a constant evolution of gameplay, features, and heroes, 
+                                    Dota 2 has truly taken on a life of its own.<br/>
+                                    RECENT REVIEWS:
+                                    Mostly Positive (8,693)<br/>
+                                    ALL REVIEWS:
+                                    Very Positive (890,863)<br/>
+                                    RELEASE DATE:
+                                    9 Jul, 2013<br/>
+                                    DEVELOPER:
+                                    Valve &#160;&#160; &#160; &#160; &#160;  
+                                    PUBLISHER:
+                                    Valve 
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <br/>
+
+                <div><h:graphicImage value="images/argo.jpg" width="150" height="150" />
+                    <div style="float: right; width:84%;">
+                        <table border="1" width="800" height="150">
+                            <tr bgcolor="F1F1F1">
+                                <td>
+                                    ARGO -
+                                    Jump straight into combat in this official standalone FREE total conversion of Arma 3. 
+                                    Argo is a hardcore tactical first-person shooter, in which you fight across unrestricted terrain, 
+                                    and where a single bullet is all it takes. Master your craft to rank up and become (in)famous on the battlefield.<br/>
+                                    RECENT REVIEWS:
+                                    Mixed (139)<br/>
+                                    ALL REVIEWS:
+                                    Mixed (8,535)<br/>
+                                    RELEASE DATE:
+                                    23 Jun, 2017<br/>
+                                    DEVELOPER:
+                                    Bohemia Interactive &#160;&#160; &#160; &#160; &#160;  
+                                    PUBLISHER:
+                                    Bohemia Interactive 
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <br/>
+
+                <div><h:graphicImage value="images/fortnite.png" width="150" height="150" />
+                    <div style="float: right; width:84%;">
+                        <table border="1" width="800" height="150">
+                            <tr bgcolor="F1F1F1">
+                                <td>
+                                    FORTNITE -
+                                    Engage in multiplayer gunfights that you are free to fly in the sky play like no 
+                                    FPS you've played before. you can choose 4 guns with a totally level playing field 
+                                    and 18 beautiful maps with different strategies. Equip your jetpack and Fight in the sky!<br/>
+                                    RECENT REVIEWS:
+                                    Mostly Positive (18,792)<br/>
+                                    ALL REVIEWS:
+                                    Very Positive (139)<br/>
+                                    RELEASE DATE:
+                                    10 Nov, 2017<br/>
+                                    DEVELOPER:
+                                    Linkflag Studio &#160;&#160; &#160; &#160; &#160;  
+                                    PUBLISHER:
+                                    Linkflag Studio 
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <br/>
+
+                <div><h:graphicImage value="images/csgo.jpg" width="150" height="150" />
+                    <div style="float: right; width:84%;">
+                        <table border="1" width="800" height="150">
+                            <tr bgcolor="F1F1F1">
+                                <td>
+                                    COUNTER STRIKE GLOBAL OFFENSIVE -
+                                    Global Offensive (CS: GO) will expand upon the team-based action gameplay that it 
+                                    pioneered when it was launched 14 years ago. CS: GO features new maps, characters, 
+                                    and weapons and delivers updated versions of the classic CS content (de_dust2, etc.).<br/>
+                                    RECENT REVIEWS:
+                                    Mostly Positive (26,752)<br/>
+                                    ALL REVIEWS:
+                                    Very Positive (1,854,850)<br/>
+                                    RELEASE DATE:
+                                    22 Aug, 2012<br/>
+                                    DEVELOPER:
+                                    Valve &#160;&#160; &#160; &#160; &#160;  
+                                    PUBLISHER:
+                                    Valve 
+
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <br/>
+
+                <div><h:graphicImage value="images/paladin.jpg" width="150" height="150" />
+                    <div style="float: right; width:84%;">
+                        <table border="1" width="800" height="150">
+                            <tr bgcolor="F1F1F1">
+                                <td>
+                                    PALADIN -
+                                    Join 25+ million players in Paladins, the free-to-play fantasy team-based shooter 
+                                    sensation. Wield guns and magic as a legendary Champion of the Realm, customizing your 
+                                    core set of abilities to play exactly how you want to play.<br/>
+                                    RECENT REVIEWS:
+                                    Mostly Positive (9,292)<br/>
+                                    ALL REVIEWS:
+                                    Very Positive (171,994)<br/>
+                                    RELEASE DATE:
+                                    8 May, 2018<br/>
+                                    DEVELOPER:
+                                    Hi-Rez Studio &#160;&#160; &#160; &#160; &#160;  
+                                    PUBLISHER:
+                                    Hi-Rez Studio 
+
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <br/>
+
+                <div><h:graphicImage value="images/pubg.jpg" width="150" height="150" />
+                    <div style="float: right; width:84%;">
+                        <table border="1" width="800" height="150">
+                            <tr bgcolor="F1F1F1">
+                                <td>
+                                    PLAYERUNKNOWN'S BATTLEGROUNDS -
+                                    is a battle royale shooter that pits 100 players against each other in a struggle for survival. 
+                                    Gather supplies and outwit your opponents to become the last person standing.<br/>
+                                    RECENT REVIEWS:
+                                    Mostly Positive (10,791)<br/>
+                                    ALL REVIEWS:
+                                    Mixed (646,920)<br/>
+                                    RELEASE DATE:
+                                    21 Dec, 2017<br/>
+                                    DEVELOPER:
+                                    Pubg Corporation &#160;&#160; &#160; &#160; &#160;  
+                                    PUBLISHER:
+                                    Pubg Corporation 
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>   
+
+
+        </h:form>
 
     </h:body>
 </html>
