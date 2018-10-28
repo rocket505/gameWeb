@@ -8,50 +8,37 @@
         <h:outputStylesheet  name="/css/style.css"/>
     </h:head>
     <h:body>
-
-            <header>
-                    <div class="wrapper">
-                            <h1><a href="homepage.html">Game Web</a><span class="color">.</span></h1>
-                            <nav>
-                            <ul>
-                            <li><a href="homepage.html">Home</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="login.xhtml">Login</a></li>
-                            </ul>
-                            </nav>
-                        </div>
-               </header>
-        
-       <h:form>
-               <div name="login-form" class="login-form" action="" method="post">
-                    <div class="header">
-                        <center>
-                            <h1>GameWeb</h1>
-                        </center>
-                        
-                    </div>
-        
-                    <div class="content">
-                        <h:inputText class="input username" value="#{loginManagedBean.username}" a:placeholder="Username"/>
-                        <div class="user-icon"></div>
-                        <br/>
-                        <br/>
-                        <h:inputSecret class="input password" value="#{loginManagedBean.password}" a:placeholder="Password" />     
-                        <div class="pass-icon"></div>		
-                    </div>
-        
-                    
-                    <div class="footer">    
-                        <center>
-                        <h:commandButton class="button" value="Login" action="#{loginManagedBean.login}" /> 
-                        <h:outputLink class="button" value="signup.xhtml">Sign up </h:outputLink>
-                        </center>
-                    </div>
-                    </div>
-                    
-                    
-                </h:form>
+       
+        <h:form>
+            <div name="login-form" class="login-form" action="" method="post">
+            <div class="header">
+                <center>
+                    <h1>GameWeb</h1>
+                </center>
                 
-            </h:body>
-        </html>
+            </div>
+
+            <div class="content">
+                <h:inputText class="input username" value="#{loginManagedBean.username}" a:placeholder="Username"/>
+                <div class="user-icon"></div>
+                <br/>
+                <br/>
+                <h:inputSecret class="input password" value="#{loginManagedBean.password}" a:placeholder="Password" />     
+                <div class="pass-icon"></div>		
+            </div>
+
+            
+            <div class="footer">    
+                <center>
+                <h:commandButton class="button" value="Login" action="#{loginManagedBean.login}" /> 
+                <h:outputLink class="button" value="signup.xhtml">Sign up </h:outputLink>
+                </center>
+            </div>
+            </div>
+            
+            
+        </h:form>
+        
+    </h:body>
+</html>
 
