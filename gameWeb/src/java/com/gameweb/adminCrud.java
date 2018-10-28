@@ -34,6 +34,7 @@ public class adminCrud implements Serializable {
     private String type;
     private String developer;
     private String publisher;
+    private int quantity;
     private String search;
     private DbConnection Db_connect;
     private Map<String,Object> sessionMapp = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
@@ -98,6 +99,14 @@ public class adminCrud implements Serializable {
         this.publisher = publisher;
     }
 
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
     public String getSearch() {
         return search;
     }
@@ -119,7 +128,7 @@ public class adminCrud implements Serializable {
                 if (Db_connect != null) {
                     con = Db_connect.get_connection();
                     if (con != null) {
-                        String sql = "INSERT INTO list(name, description ,price, type, developer ,publisher) VALUES(?,?,?,?,?,?)";
+                        String sql = "INSERT INTO list(name, description ,price, type, developer ,publisher, quantity) VALUES(?,?,?,?,?,?,?)";
                         ps = con.prepareStatement(sql);
                         ps.setString(1, name);
                         ps.setString(2, description);
@@ -127,6 +136,7 @@ public class adminCrud implements Serializable {
                         ps.setString(4, type);
                         ps.setString(5, developer);
                         ps.setString(6, publisher);
+                        ps.setInt(7, quantity);
                         i = ps.executeUpdate();
                         System.out.println("Data Added Successfully");
                     }
@@ -164,6 +174,7 @@ public class adminCrud implements Serializable {
                 obj_AdminCrud.setType(rs.getString("type"));
                 obj_AdminCrud.setDeveloper(rs.getString("developer"));
                 obj_AdminCrud.setPublisher(rs.getString("publisher"));
+                obj_AdminCrud.setQuantity(rs.getInt("quantity"));
                 list_of_game.add(obj_AdminCrud);
             }
         } catch (Exception e) {

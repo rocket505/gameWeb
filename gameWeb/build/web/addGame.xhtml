@@ -101,10 +101,18 @@
                     <h:inputText value="#{adminCrud.price}" class="form-control"/>
                 </div>
             </div>
+        
             <div class="form-group">
                 <h:outputLabel class="control-label col-sm-2">Type</h:outputLabel>
                 <div class="col-sm-4">
-                    <h:inputText value="#{adminCrud.type}" class="form-control"/>
+                    <h:selectOneMenu value="#{adminCrud.type}" class="form-control">
+                        <f:selectItem itemValue = "RPG" itemLabel = "RPG" />
+                        <f:selectItem itemValue = "First-Person Shooter" itemLabel = "First-Person Shooter" />
+                        <f:selectItem itemValue = "Mystery" itemLabel = "Mystery" />
+                        <f:selectItem itemValue = "Fighting" itemLabel = "Fighting" />
+                        <f:selectItem itemValue = "MOBA" itemLabel = "MOBA" />
+                        <f:selectItem itemValue = "Battle Royale" itemLabel = "Battle Royale" />
+                    </h:selectOneMenu>
                 </div>
             </div>
             <div class="form-group">
@@ -119,6 +127,12 @@
                     <h:inputText value="#{adminCrud.publisher}" class="form-control"/>
                 </div>
             </div>
+            <div class="form-group">
+                    <h:outputLabel class="control-label col-sm-2">Type</h:outputLabel>
+                    <div class="col-sm-4">
+                        <h:inputText value="#{adminCrud.quantity}" class="form-control" />
+                    </div>
+                </div>
             <div class="form-group">
                 <div class="col-sm-4"></div>
                 <div class="col-sm-4">
