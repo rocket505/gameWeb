@@ -9,8 +9,10 @@ package com.gameweb;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Map;
@@ -30,6 +32,9 @@ public class list implements Serializable {
     private String description;
     private double price;
     private String username;
+    private String fullname;
+    private String address;
+    private java.sql.Date date;
     protected DbConnection Db_connect;
     /**
      * Creates a new instance of list
@@ -85,6 +90,36 @@ public class list implements Serializable {
     public void setUsername(String username) {
         this.username =  username;
     }
+
+    public String getFullname() {
+        return fullname;
+    }
+
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public java.sql.Date getDate() {
+        
+
+        java.util.Date today = new java.util.Date();
+        date =  new java.sql.Date(today.getTime());
+    
+        return date;
+    }
+
+    public void setGDate(java.sql.Date GetCurrentDate) {
+        this.date = GetCurrentDate;
+    }
+    
     
     private Map<String,Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap(); 
     
@@ -137,17 +172,20 @@ public class list implements Serializable {
       }
      return "/gameInfo.xhtml";
      }
-     
-       public String buy_game(String user){
+     /*
+       public String buy_game(String user,String gameName,double price,java.sql.Date date,String fullname,String address){
      try{
          DbConnection obj_DB_connection=new DbConnection();
           Connection connection=obj_DB_connection.get_connection();
           
-          String sql = "INSERT INTO purchase_history(username, name, price) VALUES(?,?,?)";
+          String sql = "INSERT INTO purchase_history(username, name, price, date, fullname, address) VALUES(?,?,?,?,?,?)";
           PreparedStatement ps = connection.prepareStatement(sql);
           ps.setString(1, user);
-          ps.setString(2, name);
+          ps.setString(2, gameName);
           ps.setDouble(3, price);
+          ps.setDate(4, date);
+          ps.setString(5, fullname);
+          ps.setString(6, address);
           ps.executeUpdate();
           System.out.println("Data Added Successfully");
         
@@ -156,7 +194,38 @@ public class list implements Serializable {
             System.out.println(e);
       }
      return "/gameList.xhtml";
-     }
+     }*/
+       
+       public String buy_game(String user) throws Exception {
+        int i = 0;
+        
+        if (user != null) {
+            PreparedStatement ps = null;
+            Connection con = null;
+            Db_connect = new DbConnection();
+            try {
+                if (Db_connect != null) {
+                    con = Db_connect.get_connection();
+                    if (con != null) {
+                        String sql = "INSERT INTO purchase_history(username, name, price, date, fullname, address) VALUES (?,?,?,?,?,?)";
+                        ps = con.prepareStatement(sql);
+                        ps.setString(1, user);
+                        ps.setString(2, name);
+                        ps.setDouble(3, price);
+                        ps.setDate(4, date);
+                        ps.setString(5, fullname);
+                        ps.setString(6, address);
+                        i = ps.executeUpdate();
+                        System.out.println("Data Added Successfully");
+                    }
+                }
+            } catch (SQLException e) {
+                System.out.println(e);
+            }   
+        }
+        return "/gameList.xhtml?faces-redirect=true";  
+   }
+       
 
          public String wishlist_game(String user){
          

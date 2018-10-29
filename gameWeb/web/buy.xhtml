@@ -35,27 +35,20 @@
 
     <h:body style="background-color:dimgray;">
 
-        <h:form>
- 
+    <h:form>
             <div style="float: right; width:80%;">
         <br/>
-        
-        <h:form>
+            
+        <h:outputText value="#{userDetail.username}" />
         <h:outputText value="Game name: #{gameInfo.name}"></h:outputText>
-        </h:form>
-        
-        <h:form>
         <h:outputText value="Game price: RM #{gameInfo.price}"></h:outputText>
-        </h:form>
-            
-        <h:form>
-            <h:inputHidden value="#{userDetail.username}" />
-            <h:commandButton value="Proceed" action="#{gameInfo.buy_game(userDetail.username)}" onclick="buy()">
-            </h:commandButton>
-         </h:form>
-            </div>
-        </h:form>
-            
+        <h:outputText value="Game name: #{list.date}"></h:outputText>
+        <h:outputText value="Game name: #{userDetail.name}"></h:outputText>
+        <h:outputText value="Game name: #{userDetail.address}"></h:outputText>
+        <h:commandButton value="Proceed" action="#{buyGame.buy_game(userDetail.username, gameInfo.name, gameInfo.price, list.date, userDetail.name, userDetail.address)}"></h:commandButton>
+        </div>
+    </h:form>
+             
     </h:body>
 </html>
 
