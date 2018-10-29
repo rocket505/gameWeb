@@ -7,6 +7,19 @@
         <h:outputStylesheet name="/css/style.css"/>        
     </h:head>
     <h:body>
+            <header>
+                    <div class="wrapper">
+                            <nav>
+                            <ul>
+                            <li><a href="userMain.html">Home</a></li>
+                            <li><a href="gameList.xhtml">Browse</a></li>
+                            <li><h:outputLink value="profile.xhtml"><h:outputLabel value="#{userDetail.name}" /></h:outputLink></li>
+                            </ul>
+                            </nav>
+                        </div>
+                        <a href="homepage.html">
+                                <img src="images/logo.png" style="width:200px;height:100px;" /></a>
+            </header>
         <h:form>
             <div name="login-form" class="login-form" action="" method="post">
             <div class="header">
@@ -29,9 +42,9 @@
             
             <div class="footer">    
                 <center>
-                    <h:commandButton class="button" value="Edit Profile" action="#{userDetail.edit_User(userDetail.id)}" />
-                <h:outputLink class="button" value="userMain.xhtml">Back</h:outputLink>
-                
+                <h:commandButton class="button" value="Edit" action="#{userDetail.edit_User(userDetail.id)}" /><br/><br/>
+                <h:commandButton class="button" value="Logout" action="#{loginManagedBean.logout}" /><br/><br/>
+                <h:commandButton class="button" value="Back" action="userMain.xhtml" />
                 </center>
             </div>
             </div>
