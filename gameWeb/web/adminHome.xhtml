@@ -76,24 +76,23 @@
                     <div class="wrapper">
                             <nav>
                             <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="gameList.xhtml">Browse</a></li>
+                            <li><a href="adminHome.xhtml">Home</a></li>
                             <li><h:outputLink value="addGame.xhtml"><h:outputLabel value="Add Game" /></h:outputLink></li>
                             <li><h:outputLink value="adminHomeUpdate.xhtml"><h:outputLabel value="Update Game" /></h:outputLink></li>
                             <li><h:outputLink value="adminHomeDelete.xhtml"><h:outputLabel value="Delete Game" /></h:outputLink></li>
-                            <li><h:outputLink value="profile.xhtml"><h:outputLabel value="Profile" /></h:outputLink></li>
                             </ul>
                             </nav>
                         </div>
 
-                        <a href="homepage.html">
+                        <a href="adminHome.xhtml">
                         <img src="images/logo.png" style="width:200px;height:100px;" /></a>
                </header>
         <h:form>  
             
                 <div style="float: right; width:25%;">
                     <h:inputText id="text" value="#{adminCrud.search}"/>
-                    <h:commandButton value="Search" action="/adminHome.xhtml" class="btn btn-primary"/>
+                    <h:commandButton value="Search" action="/adminHome.xhtml" class="btn btn-primary"/>&nbsp;
+                    <h:commandButton id="logout" value="logout" action="#{loginManagedBean.logout}" class="btn btn-primary"/>
                 </div>
             <br/>
                 <!--<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>-->

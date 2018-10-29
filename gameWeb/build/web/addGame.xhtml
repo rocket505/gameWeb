@@ -5,10 +5,25 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>    
         <title>User Registration Form</title>
+        <h:outputStylesheet name="/css/style.css"/>
         <h:outputStylesheet name="/css/bootstrap.min.css"/>
-        <style type="text/css">
+        <style type="text/css">  
+            table {  
+                border-collapse: collapse;  
+                width: 100%;  
+            }  
+            th, td {  
+                text-align: left;  
+                padding: 8px;  
+            }  
+
+            tr:nth-child(even){background-color: #f2f2f2}  
+            th {  
+                background-color: #4E2072;  
+                color: white;  
+            }
             
-           body {
+            body {
                 font-family: "Lato", sans-serif;
             }
 
@@ -50,10 +65,35 @@
                 .sidenav {padding-top: 15px;}
                 .sidenav a {font-size: 18px;}
             }
-        </style>
+
+
+            
+        </style>  
+        
     </h:head>
-    <h:body style="background-color:dimgray">
+    <h:body>
+            <header>
+                    <div class="wrapper">
+                            <nav>
+                            <ul>
+                            <li><a href="adminHome.xhtml">Home</a></li>
+                            <li><h:outputLink value="addGame.xhtml"><h:outputLabel value="Add Game" /></h:outputLink></li>
+                            <li><h:outputLink value="adminHomeUpdate.xhtml"><h:outputLabel value="Update Game" /></h:outputLink></li>
+                            <li><h:outputLink value="adminHomeDelete.xhtml"><h:outputLabel value="Delete Game" /></h:outputLink></li>
+                            </ul>
+                            </nav>
+                        </div>
+
+                        <a href="adminHome.xhtml">
+                        <img src="images/logo.png" style="width:200px;height:100px;" /></a>
+               </header>
+
         <h:form id="form" class="form-horizontal">
+
+                <div style="float: right; width:25%;">
+                        <h:commandButton id="logout" value="logout" action="#{loginManagedBean.logout}" class="btn btn-primary"/>
+                    </div>
+
             <div class="form-group">
                 <div class="col-sm-4"></div>
                 <div  class="col-sm-4">
@@ -62,25 +102,7 @@
             </div>
             <hr/>
        
-            <div id="mySidenav" class="sidenav">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-               <h:outputLink value="adminHome.xhtml"><h:outputLabel value="Home" /></h:outputLink>
-                <h:outputLink value="addGame.xhtml"><h:outputLabel value="Add Game" /></h:outputLink>
-                <h:outputLink value="adminHomeDelete.xhtml"><h:outputLabel value="Delete Game" /></h:outputLink>
-                <h:commandLink action="#{loginManagedBean.logout}"><h:outputLabel value="Logout" /></h:commandLink>
-                
-            </div>          
-            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; more</span>
-
-            <script>
-            function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-            }
-
-            function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            }
-            </script>
+              
             <div class="form-group">
                <h:outputLabel class="control-label col-sm-2">Game Name</h:outputLabel>
                 <div class="col-sm-4">
@@ -128,7 +150,7 @@
                 </div>
             </div>
             <div class="form-group">
-                    <h:outputLabel class="control-label col-sm-2">Type</h:outputLabel>
+                    <h:outputLabel class="control-label col-sm-2">Quantity</h:outputLabel>
                     <div class="col-sm-4">
                         <h:inputText value="#{adminCrud.quantity}" class="form-control" />
                     </div>

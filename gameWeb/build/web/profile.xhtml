@@ -11,13 +11,13 @@
                     <div class="wrapper">
                             <nav>
                             <ul>
-                            <li><a href="userMain.html">Home</a></li>
+                            <li><a href="userMain.xhtml">Home</a></li>
                             <li><a href="gameList.xhtml">Browse</a></li>
                             <li><h:outputLink value="profile.xhtml"><h:outputLabel value="#{userDetail.name}" /></h:outputLink></li>
                             </ul>
                             </nav>
                         </div>
-                        <a href="homepage.html">
+                        <a href="userMain.xhtml"></a>
                                 <img src="images/logo.png" style="width:200px;height:100px;" /></a>
             </header>
         <h:form>
@@ -30,15 +30,29 @@
             </div>
 
             <div class="content">
+            <table>
+            
                 <h:inputHidden value="#{userDetail.id}"/>
-                <h:outputLabel value="Fullname" /><h:inputText class="input fullname" value="#{userDetail.name}" readonly="true"/>
-                <h:outputLabel value="Username" /><h:inputText class="input username" value="#{userDetail.username}" readonly="true"/>
-                <h:outputLabel value="Password" /><h:inputText class="input password" value="#{userDetail.password}" readonly="true"/>
-                <h:outputLabel value="Phone" /><h:inputText class="input phone" value="#{userDetail.phone}" readonly="true"/>
-                <h:outputLabel value="Email" /><h:inputText class="input address" value="#{userDetail.address}" readonly="true"/>
-                <h:outputLabel value="Address" /><h:inputText class="input email" value="#{userDetail.email}" readonly="true"/>
-            </div>
-
+                <tr>
+                <td><h:outputLabel value="Fullname" /><h:inputText class="input fullname" value="#{userDetail.name}" readonly="true"/></td>
+                </tr>
+                <tr>
+                <td><h:outputLabel value="Username" /><h:inputText class="input username" value="#{userDetail.username}" readonly="true"/></td>
+                </tr>
+                <tr>
+                <td><h:outputLabel value="Password" /><h:inputText class="input password" value="#{userDetail.password}" readonly="true"/></td>
+                </tr>
+                <tr>
+                <td><h:outputLabel value="Phone" /><br/><h:inputText class="input phone" value="#{userDetail.phone}" readonly="true"/></td>
+                </tr>
+                <tr>
+                <td><h:outputLabel value="Email" /><br/><h:inputText class="input address" value="#{userDetail.address}" readonly="true"/></td>
+                </tr>
+                <tr>
+                <td><h:outputLabel value="Address" /><h:inputText class="input email" value="#{userDetail.email}" readonly="true"/></td>
+                </tr>
+            </table>
+         </div>
             
             <div class="footer">    
                 <center>
