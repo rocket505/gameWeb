@@ -37,6 +37,22 @@
                                         <td><h:outputText value="RM #{gameInfo.price}" /></td>
                                     </tr>
 
+<<<<<<< HEAD
+    <h:form>
+            <div style="float: right; width:80%;">
+        <br/>
+            
+        <h:outputText value="#{userDetail.username}" />
+        <h:outputText value="Game name: #{gameInfo.name}"></h:outputText>
+        <h:outputText value="Game price: RM #{gameInfo.price}"></h:outputText>
+        <h:outputText value="Game name: #{list.date}"></h:outputText>
+        <h:outputText value="Game name: #{userDetail.name}"></h:outputText>
+        <h:outputText value="Game name: #{userDetail.address}"></h:outputText>
+        <h:commandButton value="Proceed" action="#{buyGame.buy_game(userDetail.username, gameInfo.name, gameInfo.price, list.date, userDetail.name, userDetail.address)}"></h:commandButton>
+        </div>
+    </h:form>
+             
+=======
                                     <tr>
                                     <td><input type="button" onClick="window.print()" value="Print This Page" class="button"/></td>
                                     </tr>
@@ -50,6 +66,7 @@
                     </div>
                 
                 
+>>>>>>> master
     </h:body>
 </html>
 

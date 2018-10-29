@@ -226,7 +226,7 @@ public class adminCrud implements Serializable {
         try {
             Db_connect = new DbConnection();
             Connection connection = Db_connect.get_connection();
-            String sql = "UPDATE list SET name=?, description=?, price=?,type=?,developer=?,publisher=? WHERE id =" + gameid;         
+            String sql = "UPDATE list SET name=?, description=?, price=?,type=?,developer=?,publisher=?,quantity=? WHERE id =" + gameid;         
             PreparedStatement ps = connection.prepareStatement(sql);
             
             ps.setString(1, name);
@@ -235,6 +235,7 @@ public class adminCrud implements Serializable {
             ps.setString(4, type);
             ps.setString(5, developer);
             ps.setString(6, publisher);
+            ps.setInt(7, quantity);
             System.out.println(ps);
             ps.executeUpdate();
 
