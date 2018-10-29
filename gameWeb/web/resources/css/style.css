@@ -389,13 +389,13 @@ CONTENT
 *******************/
 
 .login-form .content {
-	padding: 0 30px 25px 30px;
+	padding: 0 500px 25px 30px;
 }
 
 /* Input field */
 .login-form .content .input {
-	width: 188px;
-	padding: 15px 25px;
+	width: 200px;
+	padding: 25px 50px;
 	
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	font-weight: 400;

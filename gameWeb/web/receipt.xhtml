@@ -1,16 +1,64 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>TODO supply a title</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+<html xmlns="http://www.w3.org/1999/xhtml"  
+      xmlns:h="http://xmlns.jcp.org/jsf/html"  
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"> 
+    <h:head>
+        <h:outputStylesheet name="/css/style.css"/>
+        <h:outputStylesheet name="/css/style2.css"/>
+        <title>GameWeb</title>  
+    </h:head>  
+
+    <h:body>
+        <h:form>
+                    <div class="paypal">
+                            <div class="paypal__header">
+                                    <div class="paypal__header-info">
+                                            <h1>
+                                                    Thank You  <h:outputText value="#{userDetail.username}" />.
+                                                    </h1>
+                                                    <p>Your order has been received and is now being processed.</p>
+                                                    <p>Please check your order details and contact us immediately if any part of your order appear to be incorrect.</p>
+                                        </div>
+                                      <span class="paypal__date"> <h:outputText value="Game name: #{list.date}"></h:outputText></span>
+                                    </div>
+               
+                            
+                            
+                        <div class="paypal__cart">
+                                <table>
+                                    <tr>
+                                    <td><h:graphicImage value="images/#{gameInfo.name}.jpg" /></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td><h:outputText value="Game name: #{gameInfo.name}" /></td>
+                                   </tr>
+                                    
+                                   <tr>
+                                    <td><h:outputText value="Game price: RM #{gameInfo.price}" /></td>
+                                    </tr>
+
+                                    <tr>
+                                    <td><h:outputText value="User Name: #{userDetail.name}" /></td>
+                                    </tr>
+
+                                    <tr>
+                                    <td><h:outputText value="User Address: #{userDetail.address}" /></td>
+                                    </tr>
+             
+                                    <tr>
+                                    <td><input type="button" onClick="window.print()" value="Print This Page" class="button"/></td>
+                                    </tr>
+
+                                    <tr>
+                                    <td><h:commandButton action="gameList.xhtml" value="Back" /></td>
+                                    </tr>
+                            </table>  
+                             
+                        </div>
+                    </div>
+                
+                </h:form>  
+    </h:body>
 </html>
+
