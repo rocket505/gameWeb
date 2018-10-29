@@ -4,46 +4,52 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"> 
     <h:head>
         <h:outputStylesheet name="/css/style.css"/>
+        <h:outputStylesheet name="/css/style2.css"/>
         <title>GameWeb</title>  
     </h:head>  
 
     <h:body>
+                    <div class="paypal">
+                            <div class="paypal__header">
+                                    <div class="paypal__header-info">
+                                            <h1>
+                                                    Thank You.
+                                                    </h1>
+                                                    <p>Your order has been received and is now being processed.</p>
+                                                    <p>Please check your order details and contact us immediately if any part of your order appear to be incorrect.</p>
+                                        </div>
+                                      <span class="paypal__date">25.04.2016</span>
+                                    </div>
+               
+                            
+                            
+                        <div class="paypal__cart">
+                                <table>
+                                    <tr>
+                                        <td><h:graphicImage value="images/#{gameInfo.name}.jpg" /></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td><h:outputText value="#{gameInfo.name}" /></td>
+                                   </tr>
+                                    
+                                   <tr>
+                                        <td><h:outputText value="RM #{gameInfo.price}" /></td>
+                                    </tr>
 
-            <header>
-                    <div class="wrapper">
-                            <h1>Game Web<span class="color">.</span></h1>
-                            <nav>
-                            <ul>
-                            <li><a href="homepage.html">Home</a></li>
-                            <li><a href="gameList.xhtml">Browse</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="login.xhtml">Login</a></li>
-                            </ul>
-                            </nav>
+                                    <tr>
+                                    <td><input type="button" onClick="window.print()" value="Print This Page" class="button"/></td>
+                                    </tr>
+
+                                    <tr>
+                                    <td><a href="userMain.xhtml">Back</a></td>
+                                    </tr>
+                            </table>  
+                             
                         </div>
-               </header>
-
-        <h:form>
- 
-            <div style="float: right; width:80%;">
-        <br/>
-        
-        <h:form>
-        <h:outputText value="Game name: #{gameInfo.name}"></h:outputText>
-        </h:form>
-        
-        <h:form>
-        <h:outputText value="Game price: RM #{gameInfo.price}"></h:outputText>
-        </h:form>
-            
-        <h:form>
-            <h:inputHidden value="#{userDetail.username}" />
-            <h:commandButton value="Proceed" action="#{gameInfo.buy_game(userDetail.username)}" onclick="buy()">
-            </h:commandButton>
-         </h:form>
-            </div>
-        </h:form>
-            
+                    </div>
+                
+                
     </h:body>
 </html>
 

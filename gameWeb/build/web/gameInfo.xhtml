@@ -9,46 +9,50 @@
     </h:head>  
 
     <h:body>
-
             <header>
                     <div class="wrapper">
-                            <h1>Game Web<span class="color">.</span></h1>
                             <nav>
                             <ul>
                             <li><a href="homepage.html">Home</a></li>
                             <li><a href="gameList.xhtml">Browse</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="login.xhtml">Login</a></li>
+                            <li><h:outputLink value="profile.xhtml"><h:outputLabel value="profile" /></h:outputLink></li>
                             </ul>
                             </nav>
                         </div>
+                        
+                        <a href="homepage.html">
+                        <img src="images/logo.png" style="width:200px;height:100px;" /></a>
                </header>
 
-        <h:form>
             
-        
-        <h:form>
-            <h:graphicImage value="resources/images/#{gameInfo.name}.jpg" />
-        </h:form>
-        <h:form>
-            <h:outputText value="#{gameInfo.name}"></h:outputText>
-        </h:form>
-         <h:form>
-            <h:outputText value="#{gameInfo.description}"></h:outputText>
-        </h:form>
-         <h:form>
-            <h:outputText value="RM #{gameInfo.price}"></h:outputText>
-        </h:form>
+        <table>
+            <tr>
+                <td><h:graphicImage value="images/#{gameInfo.name}.jpg" /></td>
+                <br/>
+            </tr>
+            <tr>
+                <td><b><h:outputText value="#{gameInfo.name}" /></b></td>
+                <br/>
+            </tr>
+            <tr>
+                <td><h:outputText value="#{gameInfo.description}" /></td>
+                <br/>
+            </tr>
+            <tr>
+                <td><h:outputText value="RM #{gameInfo.price}" /></td>
+                <br/>
+            </tr>
+        </table>
+
             
             <!--buy button-->
-        <h:form>
-            <h:outputLink value="buy.xhtml" ><h:outputLabel value="buy" /></h:outputLink>
-        </h:form>
-        <h:form>
-            <h:commandButton value="Wishlist" action="#{gameInfo.wishlist_game(userDetail.username)}" onclick="alert('Added to Wishlist');">
+            <h:form>
+                <h:outputLink value="buy.xhtml" class="button"><h:outputLabel value="Buy" /></h:outputLink>
+            </h:form>
+            <h:form>
+            <h:commandButton value="Wishlist" class="button" action="#{gameInfo.wishlist_game(userDetail.username)}" onclick="alert('Added to Wishlist'); ">
             </h:commandButton>
-        </h:form>
-        </h:form>
+            </h:form>
     </h:body>
 </html>
 

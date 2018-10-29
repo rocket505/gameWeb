@@ -11,16 +11,17 @@
     <h:body>
         <header>
             <div class="wrapper">
-                    <h1>Game Web<span class="color">.</span></h1>
                     <nav>
                     <ul>
                     <li><a href="homepage.html">Home</a></li>
                     <li><a href="gameList.xhtml">Browse</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="login.xhtml">Login</a></li>
+                    <li><h:outputLink value="profile.xhtml"><h:outputLabel value="profile" /></h:outputLink></li>
                     </ul>
                     </nav>
                 </div>
+                
+                <a href="homepage.html">
+                <img src="images/logo.png" style="width:200px;height:100px;" /></a>
        </header>
 
         
@@ -32,28 +33,6 @@
                         <div id="columns" class="columns_4">
         
                     <h:column>
-                      <figure>
-                            <div><h:graphicImage value="images/#{cat.name}.jpg"  /></div>
-                            <h:outputText value="#{cat.name}"></h:outputText>
-                      <span class="price">$44</span>
-                        <h:commandLink action="#{list.getGame_info}" value="Buy" class="button">
-                            <f:param name="action" value="#{cat.id}" />
-                          </h:commandLink>
-                        </figure>
-                        </h:column>
-
-                        <h:column>
-                      <figure>
-                            <div><h:graphicImage value="images/#{cat.name}.jpg"  /></div>
-                            <h:outputText value="#{cat.name}"></h:outputText>
-                      <span class="price">$44</span>
-                        <h:commandLink action="#{list.getGame_info}" value="Buy" class="button">
-                            <f:param name="action" value="#{cat.id}" />
-                          </h:commandLink>
-                        </figure>
-                        </h:column>
-
-                        <h:column>
                       <figure>
                             <div><h:graphicImage value="images/#{cat.name}.jpg"  /></div>
                             <h:outputText value="#{cat.name}"></h:outputText>
