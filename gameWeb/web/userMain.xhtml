@@ -5,6 +5,7 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"> 
     <h:head>
+<<<<<<< HEAD
         <h:outputStylesheet name="/css/yusuf.css"/>
         <header>
       <h1 id="logo"><a href="">Game Web</a></h1>
@@ -33,9 +34,27 @@
        </form>
     </header>
         <title>GameWeb</title>
+=======
+        <h:outputStylesheet name="/css/style.css"/>
+        <title>GameWeb</title>  
+>>>>>>> master
     </h:head>  
 
-    <h:body style="background-color:dimgray;">
+    <h:body>
+            <header>
+                    <div class="wrapper">
+                            <nav>
+                            <ul>
+                            <li><a href="userMain.xhtml">Home</a></li>
+                            <li><a href="gameList.xhtml">Browse</a></li>
+                            <li><h:outputLink value="profile.xhtml"><h:outputLabel value="Profile" /></h:outputLink></li>
+                            </ul>
+                            </nav>
+                        </div>
+                        
+                        <a href="homepage.html">
+                        <img src="images/logo.png" style="width:200px;height:100px;" /></a>
+               </header>
 
         <h:form>
 
