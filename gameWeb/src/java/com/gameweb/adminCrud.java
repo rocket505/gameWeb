@@ -153,18 +153,18 @@ public class adminCrud implements Serializable {
            
            ArrayList<adminCrud> list_of_game = new ArrayList<>();
            Connection connection=null;
-           String sql = "";
+          
            try {
             Db_connect = new DbConnection();
             connection= Db_connect.get_connection();
             Statement st=connection.createStatement();
-            
+            String sql;
             if(search != null)
-                sql = "SELECT * FROM list WHERE name = '&"+ search + "&' "
-                        + "OR WHERE description = '&"+ search + "&'"
-                        + "OR WHERE type = '&"+ search + "&'"
-                        + "WHERE developer = '&"+ search + "&'"
-                        + "WHERE publisher = '&"+ search + "&'";
+                sql = "SELECT * FROM list WHERE name LIKE '%"+ search +"%'"
+                        + "OR description LIKE '%"+ search +"%'"
+                        + "OR  type LIKE '%"+ search +"%'"
+                        + "OR developer LIKE '%"+ search +"%'"
+                        + "OR publisher LIKE '%"+ search +"%'";
             else
                 sql = "SELECT * FROM list";
             
@@ -223,10 +223,11 @@ public class adminCrud implements Serializable {
     //update game
     public String update_Game(int gameid){
         System.out.println(gameid);
+        id = gameid;
         try {
             Db_connect = new DbConnection();
             Connection connection = Db_connect.get_connection();
-            String sql = "UPDATE list SET name=?, description=?, price=?,type=?,developer=?,publisher=?,quantity=? WHERE id =" + gameid;         
+            String sql = "UPDATE list SET name=?, description=?, price=?,type=?,developer=?,publisher=?,quantity=? WHERE id =" + id;         
             PreparedStatement ps = connection.prepareStatement(sql);
             
             ps.setString(1, name);
@@ -245,6 +246,8 @@ public class adminCrud implements Serializable {
        return "/adminHome.xhtml?faces-redirect=true";   
     }
       
+    
+    
     //delete game
     public String delete_Game(int gameid){    
         System.out.println(gameid);

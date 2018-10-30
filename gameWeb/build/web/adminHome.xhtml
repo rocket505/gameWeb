@@ -95,6 +95,7 @@
                     <h:inputText id="text" value="#{adminCrud.search}"/>
                     <h:commandButton value="Search" action="/adminHome.xhtml" class="btn btn-primary"/>
                 </div>
+        
             <br/>
                 <!--<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>-->
                          
@@ -115,7 +116,7 @@
                 <h:column>
                     <f:facet name="header">No</f:facet>
                     <h:outputText value="#{table.rowIndex + 1}"/>
-                    <h:inputHidden value="#{u.id}"></h:inputHidden>
+                    
                 </h:column>
                 <h:column>
                     <f:facet name="header">Name</f:facet>

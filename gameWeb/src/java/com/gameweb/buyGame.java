@@ -11,7 +11,9 @@ import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import javax.faces.bean.ManagedBean;
 
 /**
@@ -32,7 +34,46 @@ public class buyGame implements Serializable {
     private String fullname;
     private String address;
     private int quantity;
+    private String description;
+    private String type;
+    private String developer;
+    private String publisher;
     protected DbConnection Db_connect;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getDeveloper() {
+        return developer;
+    }
+
+    public void setDeveloper(String developer) {
+        this.developer = developer;
+    }
+
+    public String getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
+
+    
+    
     public buyGame() {
     }
 
@@ -87,7 +128,7 @@ public class buyGame implements Serializable {
         this.address = address;
     }
 
-    public int getQuantity() {
+    public int getQuantity() { 
         return quantity;
     }
 
@@ -107,7 +148,7 @@ public class buyGame implements Serializable {
                 if (Db_connect != null) {
                     con = Db_connect.get_connection();
                     if (con != null) {
-                         buyGame bGame = new buyGame();
+                        buyGame bGame = new buyGame();
                         String sql = "INSERT INTO purchase_history(username, name, price, date, fullname, address) VALUES (?,?,?,?,?,?)";
                         ps = con.prepareStatement(sql);
                         ps.setString(1, user);
@@ -127,18 +168,25 @@ public class buyGame implements Serializable {
         }
         return "/gameList.xhtml?faces-redirect=true";  
    }
-    
+           
     public String update_Quantity(String gameName){
         System.out.println(gameName);
+        ;
         try {
             Db_connect = new DbConnection();
             Connection connection = Db_connect.get_connection();
-            String sql = "UPDATE list SET quantity=? WHERE name =" + gameName;         
+            String sql = "UPDATE list SET name=?, description=?, price=?,type=?,developer=?,publisher=?,quantity=? WHERE name =" + gameName;         
             PreparedStatement ps = connection.prepareStatement(sql);
             
-            quantity = quantity - 1;
+            ps.setString(1, name);
+            ps.setString(2, description);
+            ps.setDouble(3, price);
+            ps.setString(4, type);
+            ps.setString(5, developer);
+            ps.setString(6, publisher);
             
-            ps.setInt(1, quantity);
+            int Qty = quantity - 1;
+            ps.setInt(7, Qty);
             System.out.println(ps);
             ps.executeUpdate();
 
@@ -147,5 +195,4 @@ public class buyGame implements Serializable {
         }
        return "/adminHome.xhtml?faces-redirect=true";   
     }
-    
 }
