@@ -9,20 +9,22 @@
     </h:head>  
 
     <h:body>
+        <h:form>
                     <div class="paypal">
-                            <div class="paypal__header">
-                                    <div class="paypal__header-info">
-                                            <h1>
-                                                    Thank You.
-                                                    </h1>
-                                                    <p>Your order has been received and is now being processed.</p>
-                                                    <p>Please check your order details and contact us immediately if any part of your order appear to be incorrect.</p>
-                                        </div>
-                                      <span class="paypal__date">25.04.2016</span>
-                                    </div>
+                    <div class="paypal__header">
+                    <div class="paypal__header-info">
+                    <h1>
+                    Thank You <h:outputText value="#{userDetail.username}" />.
+                    </h1>
+                    <p>Your order has been received and is now being processed.</p>
+                    <p>Please check your order details and contact us immediately if any part of your order appear to be incorrect.</p>
+                    </div>
+                    <span class="paypal__date"><h:outputText value="#{list.date}"></h:outputText></span>
+                    </div>
                
                             
                             
+<<<<<<< HEAD
                         <div class="paypal__cart">
                                 <table>
                                     <tr>
@@ -43,8 +45,26 @@
         <br/>
             
         <h:outputText value="#{userDetail.username}" />
+=======
+        <div class="paypal__cart">
+                                
+    <!--<h:form>
+        <h:form>
+        <h:inputHidden value="#{userDetail.username}" />
+        <h:inputHidden value="#{list.date}" />
+        </h:form>
+        <h:form>
+        <h:graphicImage value="images/#{gameInfo.name}.jpg" />
+        </h:form>
+        
+        <h:form>
+>>>>>>> master
         <h:outputText value="Game name: #{gameInfo.name}"></h:outputText>
+        </h:form>
+
+        <h:form>
         <h:outputText value="Game price: RM #{gameInfo.price}"></h:outputText>
+<<<<<<< HEAD
         <h:outputText value="Game name: #{list.date}"></h:outputText>
         <h:outputText value="Game name: #{userDetail.name}"></h:outputText>
         <h:outputText value="Game name: #{userDetail.address}"></h:outputText>
@@ -56,17 +76,51 @@
                                     <tr>
                                     <td><input type="button" onClick="window.print()" value="Print This Page" class="button"/></td>
                                     </tr>
+=======
+        </h:form>
+>>>>>>> master
 
-                                    <tr>
-                                    <td><a href="userMain.xhtml">Back</a></td>
-                                    </tr>
-                            </table>  
-                             
-                        </div>
-                    </div>
-                
-                
+        <h:form>
+        <h:outputText value="User Fullname: #{userDetail.name}"></h:outputText>
+        </h:form>
 
+        <h:form>
+        <h:outputText value="User address: #{userDetail.address}"></h:outputText>
+        </h:form>-->
+        <table>
+        <tr>
+        <td><h:graphicImage value="images/#{gameInfo.name}.jpg" /></td>
+        </tr>
+        <tr>
+        <td><h:outputText value="Game name: #{gameInfo.name}"></h:outputText></td>
+        </tr>
+        <tr>
+        <td><h:outputText value="Game price: RM #{gameInfo.price}"></h:outputText></td>
+        </tr>
+        <tr>
+        <td><h:outputText value="User Fullname: #{userDetail.name}"></h:outputText></td>
+        </tr>
+        <tr>
+        <td><h:outputText value="User address: #{userDetail.address}"></h:outputText></td>
+        </tr>
+        <tr>
+        <td><h:commandButton value="Proceed" class="button" action="#{buyGame.buy_game(userDetail.username, gameInfo.name, gameInfo.price, list.date, userDetail.name, userDetail.address)}"></h:commandButton></td>
+    </tr>
+    <tr>
+    <td><h:commandButton action="#{list.getGame_info}" value="Back" styleClass="button" /></td>
+    </tr>
+    </table>
+    </div>
+    </div>
+</h:form>
+
+    
+                  
+                
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
     </h:body>
 </html>
 

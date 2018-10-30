@@ -166,7 +166,7 @@ public class buyGame implements Serializable {
                 System.out.println(e);
             }   
         }
-        return "/gameList.xhtml?faces-redirect=true";  
+        return "/receipt.xhtml?faces-redirect=true";  
    }
            
     public String update_Quantity(String gameName){

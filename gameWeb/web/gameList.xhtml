@@ -10,6 +10,7 @@
 
     <h:body>
         <header>
+<<<<<<< HEAD
                     <div class="wrapper">
                             <nav>
                             <ul>
@@ -25,6 +26,20 @@
                         <a href="homepage.html">
                         <img src="images/logo.png" style="width:200px;height:100px;" /></a>
                </header>
+=======
+            <div class="wrapper">
+                    <nav>
+                    <ul>
+                    <li><a href="userMain.xhtml">Home</a></li>
+                    <li><a href="gameList.xhtml">Browse</a></li>
+                    <li><h:outputLink value="profile.xhtml"><h:outputLabel value="profile" /></h:outputLink></li>
+                    </ul>
+                    </nav>
+                </div>
+                
+                <img src="images/logo.png" style="width:200px;height:100px;" />
+       </header>
+>>>>>>> master
 
         
         <h:form>
@@ -38,7 +53,8 @@
                       <figure>
                             <div><h:graphicImage value="images/#{cat.name}.jpg"  /></div>
                             <h:outputText value="#{cat.name}"></h:outputText>
-                      <span class="price">$44</span>
+                            <br/>
+                            <h:outputText value="RM #{cat.price}"></h:outputText>
                         <h:commandLink action="#{list.getGame_info}" value="Buy" class="button">
                             <f:param name="action" value="#{cat.id}" />
                           </h:commandLink>
